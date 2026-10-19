@@ -18,7 +18,8 @@ const HTML_BASE = `
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="/sbstyles.css">
+    <style> * {margin: 0px; padding: 0px;}</style>
+    <link rel="stylesheet" href="./sbstyles.css">
 </head>
 <body>
 </body>
@@ -67,9 +68,9 @@ async function create(file_path, output, logbook) {
         let container = document.createElement("div");
         container.id = "app";
 
-        build(container, json_content)
-
         document.body.appendChild(container);
+        
+        build(container, json_content)
 
         data = DOM.serialize();
         
@@ -184,7 +185,7 @@ async function main(args) {
     )
 
     // And final logs
-    
+
     console.log(`\n\n${COLOR_LIST.GREEN}Finished building!${COLOR_LIST.RESET}`);
     console.log(`${COLOR_LIST.MAGENTA}NOTE:${COLOR_LIST.RESET} Sitemachine only builds json files that end with .sb.json`);
     console.log("So if your file ends with something else, the builder copies them to output as-is.");

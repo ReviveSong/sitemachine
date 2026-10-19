@@ -5,32 +5,52 @@ import { build } from "../builder.mjs";
 
 !function() {
     let current = {
-        content: [
+        "header": {
+            "enabled": true,
+            "style": "default",
+            "title": "$sitename!"
+        },
+        "footer": {
+            "enabled": true,
+            "wm": "$sitename"
+        },
+        "content": [
             {
-                type: "block",
-                title: "Hey!",
-                text: "$1, $2! Welcome to $sitename",
+                "type": "block",
+                "title": "Hey!",
+                "text": "$1, $2! Welcome to $sitename",
+                "styles": ["background-color: green; font-size: xx-small;"]
             },
-            { type: "line" },
-            { type: "divider", invert: true },
-            { type: "divider" },
             {
-                type: "block_button",
-                title: "$1",
-                text: "$sitename traveler",
-                button: {
-                    target: "",
-                    text: "Travel somewhere"
+                "type": "line"
+            },
+            {
+                "type": "divider",
+                "invert": true
+            },
+            {
+                "type": "divider"
+            },
+            {
+                "type": "block_button",
+                "title": "$1",
+                "text": "$sitename traveler",
+                "button": {
+                    "target": "",
+                    "text": "Travel somewhere"
                 }
-            },
+            }
         ],
-        data: {
+        "data": {
             "1": "Hello",
             "2": "World",
             "sitename": "SiteMachine"
         },
-        metadata: [
-            {"type": "title", "content": "Home - $sitename"}
+        "metadata": [
+            {
+                "type": "title",
+                "content": "Home - $sitename"
+            }
         ]
     };
     
