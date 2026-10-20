@@ -19,22 +19,26 @@
         }
 
         .sidebar, .editor {
-            position: fixed;
-            min-height: 100vh;
             background-color: aliceblue;
-            width: 200px;
         }
-
-        .sidebar {left: 0;}
-        .editor {right: 0;}
         
         .container {
-            width: calc(100vw - 450px);
             height: 100vh;
             border: solid black 2px;
 
+            flex: 1;
+
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .item {
+            min-width: 200px;
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
         }
     </style>
 
@@ -45,11 +49,75 @@
 <body>
     <div class="builder-site">
         <div class="sidebar">
+            <div class="item">
+                <h2>create</h2>
+                <div class="opener" opens="create-list"><p>Click to expand</p></div>
+                <div class="hidden" id="create-list">
+                    <ul>
+                        <li create="block">block</li>
+                        <li create="block-button">block with a button</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="item">
+                <h2>elements</h2>
+                <div class="opener" opens="elements-list"><p>Click to expand</p></div>
+                <div class="hidden" id="elements-list">
+                    <p>Drag to reorder</p>
+                    <ul>
+                    </ul>
+                </div>
+            </div>
         </div>
+
         <div class="container">
-            <div id="app"></div>
+            <div class="app-wrapper">
+                <div id="app"></div>
+            </div>
         </div>
-        <div class="editor"></div>
+
+        <div class="editor">
+            <div class="item">
+                <h2>export</h2>
+                <button>get json</button>
+            </div>
+            <div class="item">
+                <h2>modify</h2>
+            </div>
+
+            <div class="item">
+                <h2>element editor</h2>
+                <p>Select an element to edit</p>
+            </div>
+
+            <div class="item">
+                <h2>page data</h2>
+
+                <input type="text" id="pd-id"
+                    autocapitalize="none"
+                    autocomplete="none"
+                    autocorrect="off"
+                    autofocus="none"
+                    placeholder="identifier"
+                ><br>
+
+                <input type="text" id="pd-val"
+                    autocapitalize="none"
+                    autocomplete="none"
+                    autocorrect="off"
+                    autofocus="none"
+                    placeholder="value"
+                ><br>
+
+                <button id="create-data">Create</button>
+
+                <hr>
+                
+                <ul id="data-list">
+                </ul>
+            </div>
+        </div>
     </div>
 </body>
 </html>
