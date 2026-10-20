@@ -15,6 +15,7 @@ function make_header(data, map_data) {
     title.textContent = textWithData(data.title || "", map_data);
 
     header.appendChild(title);
+    header.setAttribute("sb-header-object", "");
 
     // TODO: Finish the header
 
@@ -36,8 +37,9 @@ function make_footer(data, map_data) {
     wm.textContent = textWithData(data.wm || "", map_data);
 
     footer.appendChild(wm);
+    footer.setAttribute("sb-footer-object", "");
 
-    // TODO: Finish the header
+    // TODO: Finish the footer
 
     return footer;
 }

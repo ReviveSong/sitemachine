@@ -22,6 +22,10 @@ function build(target, map) {
 
     if (map.header && map.header.enabled) {
         if (map.header.enabled == true) {
+            // This part intentionally removes <ALL> headers in case there's multiple for some reason. Same with footer!
+            let previous_header = parent.querySelectorAll("header[sb-header-object]");
+            previous_header.forEach(e=>e.remove());
+
             target.insertAdjacentElement("beforebegin",
                 make_header(map.header, map.data)
             )
@@ -63,6 +67,10 @@ function build(target, map) {
 
     if (map.footer && map.footer.enabled) {
         if (map.footer.enabled == true) {
+            // This part intentionally removes <ALL> footers in case there's multiple for some reason. Same with header!
+            let previous_footer = parent.querySelectorAll("footer[sb-footer-object]");
+            previous_footer.forEach(e=>e.remove());
+
             target.insertAdjacentElement("afterend",
                 make_footer(map.footer, map.data)
             )
