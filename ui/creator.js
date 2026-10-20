@@ -31,6 +31,9 @@ let current = {
             "type": "divider"
         },
         {
+            "type": "skippable block"
+        },
+        {
             "type": "block_button",
             "title": "$1",
             "text": "$sitename traveler",
@@ -65,6 +68,8 @@ function on_change() {
     APP?.replaceChildren();
     build(APP, current);
 }
+
+function button_create_data() {}
 
 !function () {
     on_change()

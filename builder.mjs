@@ -2,6 +2,7 @@ import { content_relay } from "./core/content.mjs";
 import { uuidv4 } from "./core/tools/uuid.mjs";
 import { gen as styles_gen } from "./core/tools/styles_gen.mjs";
 import { make_footer, make_header } from "./core/tools/header_footer.mjs";
+import { returns_try_catch } from "./core/tools/error_handler.mjs";
 
 
 /**
@@ -46,7 +47,18 @@ function build(target, map) {
                 }
             }
 
-            let received_element = content_relay(element, map.data);
+            // safe
+            let received_element = returns_try_catch(
+                content_relay, null,
+                element, map.data
+            );
+
+            // oh no! It seems the element is invalid. This part removes the uuid from the list and continues to the next one.
+            if (received_element === null) {
+                uuids.filter(v => v!==sbid);
+                continue;
+            }
+
             received_element.setAttribute("sb-id", sbid);
 
             if (element.styles) {
