@@ -40,6 +40,12 @@
         .hidden {
             display: none;
         }
+
+        pre {
+            margin: 5px;
+            border-radius: 10px;
+            background-color: color-mix(in srgb, azure 80%, black 20%);
+        }
     </style>
 
     <!--These are needed for the builder, the rest is for the creator page.-->
@@ -94,7 +100,7 @@
             <div class="item">
                 <h2>page data</h2>
 
-                <input type="text" id="pd-id"
+                <input type="text" class="pd-id"
                     autocapitalize="none"
                     autocomplete="none"
                     autocorrect="off"
@@ -102,7 +108,7 @@
                     placeholder="identifier"
                 ><br>
 
-                <input type="text" id="pd-val"
+                <input type="text" class="pd-val"
                     autocapitalize="none"
                     autocomplete="none"
                     autocorrect="off"
@@ -114,7 +120,7 @@
 
                 <hr>
                 
-                <ul id="data-list">
+                <ul class="data-list">
                 </ul>
             </div>
         </div>

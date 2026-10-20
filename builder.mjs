@@ -70,6 +70,8 @@ function build(target, map) {
             holding_container.appendChild(
                 received_element
             );
+
+            element.__ELEMENT = received_element;
         }
 
         target.setAttribute("data-sb", "");
@@ -93,6 +95,8 @@ function build(target, map) {
     if (flexed_page) {
         parent.setAttribute("sb-flexed-page", "true");
     }
+
+    return map;
 }
 
 export {build};

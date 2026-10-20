@@ -17,8 +17,6 @@ function gen(id, list) {
         
         let match_list = safer.match(style_regex) || [];
 
-        console.log(match_list)
-
         for (const matched of match_list) {
             style_html += matched;
         }
