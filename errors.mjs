@@ -9,6 +9,16 @@ class MissingKeyError extends Error {
     }
 }
 
+class MissingFeaturesError extends Error {
+    /**
+     * @param {string[]} [message]
+     */
+    constructor ( message ) {
+        super(`Component build failed, missing features (${message.join(", ")})`);
+        this.name = "MissingFeaturesError";
+    }
+}
+
 class InvalidKeyError extends Error {
     /**
      * @param {string | undefined} message
@@ -31,5 +41,6 @@ class InvalidKeyError extends Error {
 
 export {
     MissingKeyError,
-    InvalidKeyError
+    MissingFeaturesError,
+    InvalidKeyError,
 }

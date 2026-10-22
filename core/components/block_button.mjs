@@ -1,19 +1,16 @@
+import { build_repeated } from "../repeated_fields/build_field.mjs";
 import { textWithData } from "../tools/text.mjs";
 
 export function block_button_component(item, data) {
     let new_item = document.createElement("div");
     
-    if (item.title !== undefined) {
-        let title = document.createElement("h1");
-        title.textContent = textWithData(item.title, data);
-        new_item.appendChild(title);
-    }
+    item.title ?
+    new_item.appendChild(build_repeated("title", item.title, data))
+    :"";
 
-    if (item.text !== undefined) {
-        let text = document.createElement("p");
-        text.textContent = textWithData(item.text, data);
-        new_item.appendChild(text);
-    }
+    item.text?
+    new_item.appendChild(build_repeated("text", item.text, data))
+    :"";
 
     let button_info = item.button;
 

@@ -50,6 +50,9 @@ let current = {
             "type": "title",
             "content": "Home - $sitename"
         }
+    ],
+    "features": [
+        "bigimg"
     ]
 };
 
