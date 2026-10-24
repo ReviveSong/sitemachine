@@ -1,18 +1,70 @@
+[data-sb] {
+    background-color: var(--sb-primary-color);
+    color: var(--sb-text-color);
+
+    font-family: var(--sb-font-family);
+    font-size: var(--sb-font-size);
+    line-height: var(--sb-line-height);
+
+    transition: all 200ms ease;
+}
+
+[data-sb] h1 {
+    font-size: 2em;
+}
+[data-sb] h2 {
+    font-size: 1.5em;
+}
+[data-sb] h3 {
+    font-size: 1.25em;
+}
+[data-sb] h4 {
+    font-size: 1.125em;
+}
+[data-sb] h5 {
+    font-size: 1em;
+}
+[data-sb] h6,
+[data-sb] code,
+[data-sb] pre,
+[data-sb] small {
+    font-size: 0.875em;
+}
+[data-sb] button,
+[data-sb] p,
+[data-sb] input
+[data-sb] textarea
+[data-sb] select
+[data-sb] label
+[data-sb] li
+[data-sb] blockquote {
+    font-size: 1em;
+}
+
 [data-sb] * {
     padding: 0px;
     margin: 0px;
 
-    background-color: var(--sb-primary-color);
-    color: var(--sb-text-color);
-    font-family: var(--sb-font-family);
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+
+    font-weight: var(--sb-font-weight);
+    border-color: var(--sb-border-color);
 }
 
 :root {
-    --sb-primary-color: white;
-    --sb-text-color: black;
-    --sb-accent-color: cyan;
+    --sb-primary-color: #FFFFFF;
+    --sb-text-color: #1F2937;
+    --sb-accent-color: #3B82F6;
+    --sb-border-color: #E5E7EB;
 
+    --sb-font-size: 16px;
     --sb-font-family: Arial, 'sans-serif';
+    --sb-font-weight: 400;
+    --sb-font-weight-medium: 500;
+    --sb-font-weight-bold: 700;
+
+    --sb-line-height: 1.5;
 }
 
 [sb-flexed-page="true"] {
@@ -25,10 +77,17 @@
     flex: 1;
 }
 
+[data-sb] strong,
+[data-sb] b {
+    font-weight: var(--sb-font-weight-bold);
+}
+
 [data-sb] button {
     padding: 5px;
-    border: solid var(--sb-accent-color);
+    border-style: solid;
     border-radius: 1rem;
+
+    font-weight: var(--sb-font-weight-medium);
 
     background-color: color-mix(
         in srgb,
@@ -63,6 +122,27 @@
 
     background-color: var(--sb-primary-color);
     color: var(--sb-text-color);
+}
+
+/* TEXT BOX */
+[data-component-type="text_box"] {
+    margin: 30px;
+    padding: 30px;
+    background-color: var(--sb-accent-color);
+    border-radius: 20px;
+}
+
+/* TITLE TEXT BOX */
+[data-component-type="title_text_box"]>h1 {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+[data-component-type="title_text_box"] {
+    margin: 30px;
+    padding: 30px;
+    background-color: var(--sb-accent-color);
+    border-radius: 20px;
 }
 
 /* DIVIDER */

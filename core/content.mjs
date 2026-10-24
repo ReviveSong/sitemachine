@@ -2,6 +2,7 @@ import { block_component } from "./components/block.mjs";
 import { block_button_component } from "./components/block_button.mjs";
 import { divider_component } from "./components/divider.mjs";
 import { line_component } from "./components/line.mjs";
+import { text_box_component } from "./components/text_box.mjs";
 
 /**
  * This function relays the function call to the correct function.
@@ -20,6 +21,8 @@ export function content_relay(item, data) {
         "line": line_component,
         "divider": divider_component,
         "block_button": block_button_component,
+        "text_box": text_box_component,
+        "title_text_box": block_component, // [Duplicate!]
     }
 
     let run = map[item.type];

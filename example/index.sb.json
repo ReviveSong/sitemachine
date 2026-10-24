@@ -16,6 +16,15 @@
             "styles": ["background-color: green; font-size: xx-small;"]
         },
         {
+            "type": "title_text_box",
+            "title": "$sitename title text box",
+            "text": "Hello! I am a wild text box. The website I am in is called $sitename. Such a lovely name, isn't it?\r\nAnyway, what brings you here?"
+        },
+        {
+            "type": "text_box",
+            "text": "Hello! I am a wild text box. The website I am in is called $sitename. Such a lovely name, isn't it?\r\nAnyway, what brings you here?"
+        },
+        {
             "type": "line"
         },
         {
@@ -24,6 +33,9 @@
         },
         {
             "type": "divider"
+        },
+        {
+            "type": "skippable block"
         },
         {
             "type": "block_button",
@@ -36,9 +48,6 @@
         }
     ],
     "data": {
-        "1": "Hello",
-        "2": "World",
-        "sitename": "SiteMachine"
     },
     "metadata": [
         {
