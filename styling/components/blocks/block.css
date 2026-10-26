@@ -1,0 +1,28 @@
+%CR {
+    width: min(100%, var(--sb-content-width));
+    margin: 1.5rem auto;
+    padding: clamp(2.5rem, 8vw, 6rem) clamp(1.25rem, 7vw, 5rem);
+    border: 1px solid color-mix(in srgb, var(--sb-accent-color) 18%, var(--sb-border-color));
+    border-radius: var(--sb-card-radius);
+    background:
+        radial-gradient(ellipse at 90% 0%, color-mix(in srgb, var(--sb-accent-color) 13%, transparent), transparent 52%),
+        color-mix(in srgb, var(--sb-primary-color) 96%, var(--sb-accent-color));
+    box-shadow: var(--sb-shadow);
+    text-align: center;
+}
+
+%CR > :not(:first-child) {
+    margin-top: 1.25rem;
+}
+
+%CR > h1 {
+    max-width: 16ch;
+    margin-inline: auto;
+}
+
+%CR > p {
+    max-width: 58ch;
+    margin-inline: auto;
+    color: color-mix(in srgb, var(--sb-text-color) 78%, var(--sb-primary-color));
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+}

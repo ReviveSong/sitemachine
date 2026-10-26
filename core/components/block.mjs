@@ -1,5 +1,5 @@
 import { build_repeated } from "../repeated_fields/build_field.mjs";
-import { textWithData } from "../tools/text.mjs";
+import { textWithData } from "../tools/text_utils.mjs";
 
 export function block_component(item, data) {
     let new_item = document.createElement("div");

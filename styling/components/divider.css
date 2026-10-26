@@ -1,0 +1,17 @@
+%CR {
+    width: min(100%, var(--sb-content-width));
+    height: clamp(2.5rem, 7vw, 5rem);
+    margin: clamp(1.5rem, 4vw, 3rem) auto;
+    border-radius: var(--sb-control-radius);
+    background: linear-gradient(
+        110deg,
+        color-mix(in srgb, var(--sb-accent-color) 78%, var(--sb-primary-color)),
+        color-mix(in srgb, var(--sb-accent-color) 22%, var(--sb-primary-color))
+    );
+}
+
+%CR[data-sb-invert] {
+    border: 1px solid var(--sb-border-color);
+    background: color-mix(in srgb, var(--sb-primary-color) 97%, var(--sb-text-color));
+    box-shadow: inset 0 1px 3px rgb(15 23 42 / 5%);
+}

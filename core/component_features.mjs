@@ -1,5 +1,5 @@
 import { MissingFeaturesError } from "../errors.mjs";
-import { normalize } from "./tools/normalize.mjs";
+import { normalize } from "./tools/normalization.mjs";
 
 /**
  * This list helps the content relay script understand what features need to be enabled for certain components to work.

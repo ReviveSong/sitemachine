@@ -12,8 +12,32 @@
         {
             "type": "block",
             "title": "Hey!",
-            "text": "$1, $2! Welcome to $sitename",
-            "styles": ["background-color: green; font-size: xx-small;"]
+            "text": "Welcome to $sitename",
+            "styles": ["font-size: 2rem;"]
+        },
+        {
+            "type": "title_text_box",
+            "title": "$sitename title text box",
+            "text": "Hello! I am a wild text box. The website I am in is called $sitename. Such a lovely name, isn't it?\r\nAnyway, what brings you here?"
+        },
+        {
+            "type": "text_box",
+            "text": "Check out the latest updates!"
+        },
+        {
+            "type": "post",
+            "author": "Mc $sitename",
+            "picture_url": "/assets/sample_icon.png",
+            "title": "Did you see the new $post_purpose?",
+            "text": "The new $post_purpose is truly a step up from the previous year!\r\nJust see for yerself! $:ATTACHMENT:(/assets/not_markiplier.png)\r\nIsn't it truly something? See attachments for more!",
+            "attachments": [
+                "/assets/not_markiplier.png",
+                "/assets/not_markiplier.png",
+                "/assets/not_markiplier.png",
+                "/assets/not_markiplier.png",
+                "/assets/not_markiplier.png",
+                "/assets/not_markiplier.png"
+            ]
         },
         {
             "type": "line"
@@ -26,6 +50,9 @@
             "type": "divider"
         },
         {
+            "type": "skippable block"
+        },
+        {
             "type": "block_button",
             "title": "$1",
             "text": "$sitename traveler",
@@ -36,9 +63,6 @@
         }
     ],
     "data": {
-        "1": "Hello",
-        "2": "World",
-        "sitename": "SiteMachine"
     },
     "metadata": [
         {

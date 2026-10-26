@@ -1,4 +1,4 @@
-import { textWithData } from "../../tools/text.mjs";
+import { textWithData } from "../../tools/text_utils.mjs";
 
 /**
  * @param {any} item

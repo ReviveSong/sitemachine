@@ -1,0 +1,22 @@
+[sb-header-style="default"] {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 5rem;
+    padding: 1rem clamp(1rem, 5vw, 2rem);
+    border-bottom: 1px solid var(--sb-border-color);
+    background-color: var(--sb-primary-color);
+    color: var(--sb-text-color);
+}
+
+[sb-header-style="default"] > h1 {
+    width: min(100%, var(--sb-content-width));
+    font-family: var(--sb-font-family);
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-weight: var(--sb-font-weight-bold);
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    overflow-wrap: anywhere;
+}

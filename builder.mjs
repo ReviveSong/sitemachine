@@ -1,8 +1,8 @@
 import { content_relay } from "./core/content.mjs";
-import { uuidv4 } from "./core/tools/uuid.mjs";
-import { gen as styles_gen } from "./core/tools/styles_gen.mjs";
-import { make_footer, make_header } from "./core/tools/header_footer.mjs";
-import { returns_try_catch } from "./core/tools/error_handler.mjs";
+import { uuidv4 } from "./core/tools/id_generation.mjs";
+import { gen as styles_gen } from "./core/tools/styles_generation.mjs";
+import { make_footer, make_header } from "./core/tools/document_layout.mjs";
+import { returns_try_catch } from "./core/tools/error_handling.mjs";
 
 import { build as features_build } from "./core/features/feature_builder.mjs";
 

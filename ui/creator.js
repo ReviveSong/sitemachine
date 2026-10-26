@@ -3,58 +3,24 @@ import { build } from "../builder.mjs";
 // This script is to be used with creator.html.
 // The purpose of this script is to make the creator page functional, this is not required for the builder to run.
 
-let current = {
-    "header": {
-        "enabled": true,
-        "style": "default",
-        "title": "$sitename!"
-    },
-    "footer": {
-        "enabled": true,
-        "wm": "$sitename"
-    },
-    "content": [
-        {
-            "type": "block",
-            "title": "Hey!",
-            "text": "$1, $2! Welcome to $sitename",
-            "styles": ["background-color: green; font-size: xx-small;"]
-        },
-        {
-            "type": "line"
-        },
-        {
-            "type": "divider",
-            "invert": true
-        },
-        {
-            "type": "divider"
-        },
-        {
-            "type": "skippable block"
-        },
-        {
-            "type": "block_button",
-            "title": "$1",
-            "text": "$sitename traveler",
-            "button": {
-                "target": "",
-                "text": "Travel somewhere"
-            }
-        }
-    ],
-    "data": {
-    },
-    "metadata": [
-        {
-            "type": "title",
-            "content": "Home - $sitename"
-        }
-    ],
-    "features": [
-        "bigimg"
-    ]
-};
+const env = await fetch('./.env')
+    .then(r => r.text())
+    .then(t =>
+        Object.fromEntries(
+            t.trim()
+                .split(/\r?\n/)
+                .map(l =>
+                    l.split('=')
+                        .map(s =>
+                            s.trim()
+                        )
+                )
+        )
+    );
+
+let current = env.DEBUG == "false" ?
+    {} :
+    await fetch(`./debug_templates/${env.DEBUG_FILE}`).then(res => res.json());
 
 const APP = document.getElementById("app");
 
