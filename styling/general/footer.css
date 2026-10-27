@@ -1,9 +1,8 @@
 [sb-footer-style="default"] {
-    padding: 2rem clamp(1rem, 5vw, 2rem);
+    padding: 1.5rem clamp(1rem, 5vw, 2rem);
     border-top: 1px solid var(--sb-border-color);
     background-color: var(--sb-primary-color);
-    color: color-mix(in srgb, var(--sb-text-color) 70%, var(--sb-primary-color));
-    text-align: center;
+    color: var(--sb-muted-color);
 }
 
 [sb-footer-style="default"] > p {

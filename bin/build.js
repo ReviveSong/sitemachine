@@ -19,7 +19,7 @@ const HTML_BASE = `
     <title>Document</title>
 
     <style> * {margin: 0px; padding: 0px;}</style>
-    <link rel="stylesheet" href="./sbstyles.css">
+    <link rel="stylesheet" href="/sbstyles.css">
 </head>
 <body>
 </body>

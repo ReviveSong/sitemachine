@@ -55,14 +55,17 @@
         {
             "type": "block_button",
             "title": "$1",
-            "text": "$sitename traveler",
+            "text": "$sitename traveler - about page",
             "button": {
-                "target": "",
+                "target": "about",
                 "text": "Travel somewhere"
             }
         }
     ],
+    "features": ["bigimg"],
     "data": {
+        "sitename": "Sitemachine",
+        "post_purpose": "Mark-A-Plier"
     },
     "metadata": [
         {

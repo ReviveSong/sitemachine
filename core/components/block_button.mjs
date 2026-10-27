@@ -1,4 +1,5 @@
 import { build_repeated } from "../repeated_fields/build_field.mjs";
+import { safe_url_source } from "../tools/security_utils.mjs";
 import { textWithData } from "../tools/text_utils.mjs";
 
 export function block_button_component(item, data) {
@@ -30,11 +31,13 @@ export function block_button_component(item, data) {
 
     new_button.textContent = textWithData(button_info.text, data);
 
-    new_button.addEventListener("click", e=>{
-        e.preventDefault();
-
-        window.location.assign(button_info.target);
-    })
+    new_button.setAttribute("onclick", "("+(()=>{
+        window.location.assign('$TARGET');
+    }).toString()
+        .replaceAll("$TARGET", safe_url_source(button_info.target))
+        .replaceAll("\n", "")
+        +")()"
+    );
 
     new_item.appendChild(new_button);
 

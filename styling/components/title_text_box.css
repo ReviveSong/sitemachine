@@ -4,8 +4,8 @@
     padding: clamp(1.5rem, 4vw, 2.5rem);
     border: 1px solid var(--sb-border-color);
     border-radius: var(--sb-card-radius);
-    background-color: color-mix(in srgb, var(--sb-primary-color) 97%, var(--sb-text-color));
-    box-shadow: 0 10px 30px rgb(15 23 42 / 5%);
+    background-color: var(--sb-primary-color);
+    box-shadow: var(--sb-shadow);
 }
 
 %CR > h1 {
@@ -15,5 +15,5 @@
 
 %CR > p {
     max-width: 70ch;
-    color: color-mix(in srgb, var(--sb-text-color) 80%, var(--sb-primary-color));
+    color: var(--sb-muted-color);
 }

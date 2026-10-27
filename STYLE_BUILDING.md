@@ -11,7 +11,6 @@ To properly create styles, name the css file after the component
 in such a way that
 block_component or block would be called `block.css`
 
-
 After creating the file, to reference the component, type %CR.
 
 An example of such would be
@@ -26,6 +25,14 @@ or worse, ruining the site owner's page.
 
 **SBSTYLES_ROOT.css is the file that you put general styles in!**
 **IN ADDITION: Always remember to build the styles after modifying them!**
+
+## Reusable themes
+
+Use the `--sb-*` properties in `SBSTYLES_ROOT.css` rather than hardcoding colors.
+This is important because people want to change their page colors, and themes generally shouldn't look specifically made for x person / brand.
+
+Themes should lean towards modern though, maybe they could include variants some day, such as x device native styling.
+If you as a contributor wish to help with these variants, mark them with `[data-sb-variant="variantname"]`.
 
 # Building
 In order to properly build sbstyles.css, run the following command from the repo folder root:

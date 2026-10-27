@@ -1,0 +1,85 @@
+{
+    "header": {
+        "enabled": true,
+        "style": "default",
+        "title": "$sitename!"
+    },
+    "footer": {
+        "enabled": true,
+        "wm": "$sitename"
+    },
+    "content": [
+        {
+            "type": "block",
+            "title": "Hey!",
+            "text": "Welcome to $sitename",
+            "styles": ["font-size: 2rem;"]
+        },
+        {
+            "type": "title_text_box",
+            "title": "$sitename title text box",
+            "text": "Hello! I am a wild text box. The website I am in is called $sitename. Such a lovely name, isn't it?\r\nAnyway, what brings you here?"
+        },
+        {
+            "type": "text_box",
+            "text": "Check out the latest updates!"
+        },
+        {
+            "type": "post",
+            "author": "Mc $sitename",
+            "picture_url": "/assets/sample_icon.png",
+            "title": "Did you see the new $post_purpose?",
+            "text": "So what is $sitename? Well, $post_purpose$post_contents"
+        },
+        {
+            "type": "post",
+            "author": "Mc $sitename",
+            "picture_url": "/assets/sample_icon.png",
+            "title": "Can't loopie loop!?",
+            "text": "Rest assured, referencing a key in itself or causing an endless pattern will cause an infinite loop detection. JavaScript hopefully handles any other unknown cases."
+        },
+        {
+            "type": "block",
+            "text": "See for yourself: $intended_loop_self $intended_loop_pattern $v2_intended_loop_pattern"
+        },
+        {
+            "type": "divider",
+            "invert": true
+        },
+        {
+            "type": "block",
+            "text": "Also in case you were wondering, yes, you can escape data: $\\intended_loop_self with $\\\\"
+        },
+        {
+            "type": "post",
+            "text": "Double referencing? $$is_double!\r\n\r\nOk bye bye have an image of someone who happens to not be markiplier $:ATTACHMENT:(/assets/not_markiplier.png)"
+        },
+        {
+            "type": "line"
+        },
+        {
+            "type": "divider",
+            "invert": true
+        }
+    ],
+    "features": ["bigimg"],
+    "data": {
+        "double_answer": "No",
+        "is_double": "$double_answer",
+
+        "intended_loop_self": "$intended_loop_self",
+        "intended_loop_pattern": "$v2_intended_loop_pattern",
+        "v2_intended_loop_pattern": "$intended_loop_pattern",
+
+        "sitename": "Sitemachine About",
+        "target": "Sitemachine",
+        "post_purpose": "Mark-A-Plier!\r\n",
+        "post_contents": "But if you were expecting an actual answer, $target is an html+json website building engine.\r\n$target makes website building and rendering easy anywhere! Be it custom profile pages or even full on websites, $target can do it all."
+    },
+    "metadata": [
+        {
+            "type": "title",
+            "content": "About - $sitename"
+        }
+    ]
+}

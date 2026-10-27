@@ -3,7 +3,6 @@ import { block_button_component } from "./components/block_button.mjs";
 import { divider_component } from "./components/divider.mjs";
 import { line_component } from "./components/line.mjs";
 import { post_component } from "./components/post.mjs";
-import { check } from "./component_features.mjs";
 import { text_box_component } from "./components/text_box.mjs";
 
 /**
@@ -32,10 +31,8 @@ export function content_relay(item, data, features) {
     let run = map[item.type];
 
     if (run === undefined) throw new Error(`Unknown type ${item.type}`);
-    check(features, item.type);
     
-    
-    let received = run(item, data);
+    let received = run(item, data, features);
     received.setAttribute("data-component-type", item.type);
 
     return received;

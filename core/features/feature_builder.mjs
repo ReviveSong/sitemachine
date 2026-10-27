@@ -1,3 +1,5 @@
+import { bigimg_fn } from "./feature_lib/bigimg.mjs";
+
 const VALID_FEATURES = [
     "bigimg"
 ]
@@ -19,8 +21,22 @@ function build(container, feature) {
     // is by making it very clear. For that, throwing an error would halt the builder.
     if (!VALID_FEATURES.includes(feature)) throw new Error(`Provided invalid feature ${feature}`);
     
-    // ffe: Feature Flag Enabled
-    container.setAttribute("sm-ffe", feature);
+    try {
+        const keys = container.getAttribute("sm-ffe")??"";
+
+        if (keys.split(" ").includes(feature)) return;
+
+        if (feature === "bigimg") bigimg_fn(container);
+
+        // ffe: Feature Flag Enabled
+        const previous_flags = container.getAttribute("sm-ffe")??"";
+
+        container.setAttribute("sm-ffe",
+            (previous_flags+" "+feature).trim()
+        );
+    } catch (error) {
+        console.error(`Failed to enable feature ${feature} due to error (${error})`)
+    }
 }
 
 export {build}

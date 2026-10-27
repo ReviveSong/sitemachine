@@ -48,6 +48,10 @@ function on_change() {
         delete element.__ELEMENT;
     }
 
+    // The following two lines rebuild features cleanly! They've been commented because rebuilding them isn't necessary
+    //document.querySelectorAll("[data-sb-cleanup]").forEach(e=>e.remove());
+    //APP?.setAttribute("sm-ffe", "");
+
     try {
         let build_content = build(APP, current);
         current = build_content;
