@@ -2,6 +2,7 @@ import { block_component } from "./components/block.mjs";
 import { block_button_component } from "./components/block_button.mjs";
 import { divider_component } from "./components/divider.mjs";
 import { line_component } from "./components/line.mjs";
+import { post_component } from "./components/post.mjs";
 import { text_box_component } from "./components/text_box.mjs";
 
 /**
@@ -11,16 +12,18 @@ import { text_box_component } from "./components/text_box.mjs";
  * The below is the data relayed, all calls to this come from the builder.
  * @param {*} item 
  * @param {*} data 
+ * @param {*} features 
  * 
  * The below should be the finished result of the item
  * @returns {HTMLElement}
  */
-export function content_relay(item, data) {
+export function content_relay(item, data, features) {
     const map = {
         "block": block_component,
         "line": line_component,
         "divider": divider_component,
         "block_button": block_button_component,
+        "post": post_component,
         "text_box": text_box_component,
         "title_text_box": block_component, // [Duplicate!]
     }
@@ -29,7 +32,7 @@ export function content_relay(item, data) {
 
     if (run === undefined) throw new Error(`Unknown type ${item.type}`);
     
-    let received = run(item, data);
+    let received = run(item, data, features);
     received.setAttribute("data-component-type", item.type);
 
     return received;

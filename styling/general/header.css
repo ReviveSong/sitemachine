@@ -1,0 +1,21 @@
+[sb-header-style="default"] {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    min-height: 4rem;
+    padding: 1rem clamp(1rem, 5vw, 2rem);
+    border-bottom: 1px solid var(--sb-border-color);
+    background-color: var(--sb-primary-color);
+    color: var(--sb-text-color);
+}
+
+[sb-header-style="default"] > h1 {
+    width: min(100%, var(--sb-content-width));
+    font-family: var(--sb-font-family);
+    margin-inline: auto;
+    font-size: clamp(1.25rem, 3vw, 1.6rem);
+    font-weight: var(--sb-font-weight-bold);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}

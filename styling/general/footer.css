@@ -1,0 +1,12 @@
+[sb-footer-style="default"] {
+    padding: 1.5rem clamp(1rem, 5vw, 2rem);
+    border-top: 1px solid var(--sb-border-color);
+    background-color: var(--sb-primary-color);
+    color: var(--sb-muted-color);
+}
+
+[sb-footer-style="default"] > p {
+    width: min(100%, var(--sb-content-width));
+    margin-inline: auto;
+    font-size: 0.9rem;
+}

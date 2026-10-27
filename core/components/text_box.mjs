@@ -1,4 +1,4 @@
-import { textWithData } from "../tools/text.mjs";
+import { textWithData } from "../tools/text_utils.mjs";
 
 export function text_box_component(item, data) {
     let new_item = document.createElement("div");

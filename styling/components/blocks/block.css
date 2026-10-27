@@ -1,0 +1,23 @@
+%CR {
+    width: min(100%, var(--sb-content-width));
+    margin: 1.5rem auto;
+    padding: clamp(2.5rem, 8vw, 6rem) clamp(1.25rem, 7vw, 5rem);
+    border: 1px solid var(--sb-border-color);
+    border-radius: var(--sb-card-radius);
+    background: var(--sb-primary-color);
+    box-shadow: var(--sb-shadow);
+}
+
+%CR > :not(:first-child) {
+    margin-top: 1.25rem;
+}
+
+%CR > h1 {
+    max-width: 24ch;
+}
+
+%CR > p {
+    max-width: 58ch;
+    color: var(--sb-muted-color);
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+}

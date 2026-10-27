@@ -1,0 +1,1 @@
+export const normalize = (/** @type {string} */ str) => str.toLowerCase();

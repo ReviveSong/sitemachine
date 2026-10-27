@@ -1,19 +1,17 @@
-import { textWithData } from "../tools/text.mjs";
+import { build_repeated } from "../repeated_fields/build_field.mjs";
+import { safe_url_source } from "../tools/security_utils.mjs";
+import { textWithData } from "../tools/text_utils.mjs";
 
 export function block_button_component(item, data) {
     let new_item = document.createElement("div");
     
-    if (item.title !== undefined) {
-        let title = document.createElement("h1");
-        title.textContent = textWithData(item.title, data);
-        new_item.appendChild(title);
-    }
+    item.title ?
+    new_item.appendChild(build_repeated("title", item.title, data))
+    :"";
 
-    if (item.text !== undefined) {
-        let text = document.createElement("p");
-        text.textContent = textWithData(item.text, data);
-        new_item.appendChild(text);
-    }
+    item.text?
+    new_item.appendChild(build_repeated("text", item.text, data))
+    :"";
 
     let button_info = item.button;
 
@@ -33,11 +31,13 @@ export function block_button_component(item, data) {
 
     new_button.textContent = textWithData(button_info.text, data);
 
-    new_button.addEventListener("click", e=>{
-        e.preventDefault();
-
-        window.location.assign(button_info.target);
-    })
+    new_button.setAttribute("onclick", "("+(()=>{
+        window.location.assign('$TARGET');
+    }).toString()
+        .replaceAll("$TARGET", safe_url_source(button_info.target))
+        .replaceAll("\n", "")
+        +")()"
+    );
 
     new_item.appendChild(new_button);
 

@@ -1,4 +1,4 @@
-import { textWithData } from "./text.mjs";
+import { textWithData } from "./text_utils.mjs";
 
 /**
  * 

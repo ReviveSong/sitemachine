@@ -1,0 +1,6 @@
+%CR {
+    width: min(100%, var(--sb-content-width));
+    margin: clamp(1.5rem, 4vw, 3rem) auto;
+    border: 0;
+    border-top: 1px solid var(--sb-border-color);
+}
